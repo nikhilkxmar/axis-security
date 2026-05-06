@@ -1,0 +1,15 @@
+node_modules/
+webhook-server/node_modules/
+
+**/__axis_scan_tmp/
+**/.DS_Store
+
+*.log
+logs/
+
+webhook-server/.env
+.env
+
+Dockerfile.*
+
+README.md

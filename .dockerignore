@@ -1,0 +1,7 @@
+**/node_modules
+**/__axis_scan_tmp
+**/.git
+**/.DS_Store
+**/*.log
+webhook-server/.env
+

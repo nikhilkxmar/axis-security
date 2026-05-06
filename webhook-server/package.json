@@ -1,0 +1,25 @@
+{
+  "name": "axis-security-gatekeeper",
+  "version": "2.0.0",
+  "private": true,
+  "description": "AI-powered security gatekeeper for GitHub Pull Requests",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "worker": "node worker.js"
+  },
+  "dependencies": {
+    "@google/genai": "^1.52.0",
+    "@octokit/rest": "^21.0.0",
+    "bullmq": "^5.15.0",
+    "dotenv": "^16.4.5",
+    "execa": "^9.3.0",
+    "express": "^4.19.2",
+    "ioredis": "^5.4.1",
+    "pino": "^9.3.2",
+    "pino-http": "^10.4.0",
+    "zod": "^3.23.8"
+  }
+}
+

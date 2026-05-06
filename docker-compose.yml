@@ -1,0 +1,32 @@
+services:
+  redis:
+    image: redis:7-alpine
+    command: ["redis-server", "--appendonly", "no"]
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+
+  axis-security-gatekeeper:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - ./webhook-server/.env
+    ports:
+      - "3000:3000"
+    depends_on:
+      - redis
+    restart: unless-stopped
+    command: ["node", "server.js"]
+
+  axis-worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - ./webhook-server/.env
+    depends_on:
+      - redis
+    restart: unless-stopped
+    command: ["node", "worker.js"]
+
