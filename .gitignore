@@ -11,5 +11,3 @@ webhook-server/.env
 .env
 
 Dockerfile.*
-
-README.md
